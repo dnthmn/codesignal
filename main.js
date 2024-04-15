@@ -51,19 +51,19 @@ const solution = (numbers) => {
 };
 
 // Measure performance
-const startDate0 = Date.now();
-solution([1, 2, 1, 3, 4]);
-const endDate0 = Date.now();
-console.log(`Execution time: ${endDate0 - startDate0} ms`);
+// const startDate0 = Date.now();
+// solution([1, 2, 1, 3, 4]);
+// const endDate0 = Date.now();
+// console.log(`Execution time: ${endDate0 - startDate0} ms`);
 
-console.time("Execution Time");
-solution([1, 2, 1, 3, 4]);
-console.timeEnd("Execution Time");
+// console.time("Execution Time");
+// solution([1, 2, 1, 3, 4]);
+// console.timeEnd("Execution Time");
 
-const startPerformance0 = performance.now();
-solution([1, 2, 1, 3, 4]);
-const endPerformance0 = performance.now();
-console.log(`Execution time: ${endPerformance0 - startPerformance0} ms`);
+// const startPerformance0 = performance.now();
+// solution([1, 2, 1, 3, 4]);
+// const endPerformance0 = performance.now();
+// console.log(`Execution time: ${endPerformance0 - startPerformance0} ms`);
 
 console.log(solution([1, 2, 1, 3, 4]));
 console.log(solution([1, 2, 3, 4]));
@@ -110,18 +110,18 @@ const solution1 = (a) => {
 };
 
 // Measure performance
-const startDate1 = Date.now();
-solution1([4, 0, 1, -2, 3]);
-const endDate1 = Date.now();
-console.log(`Execution time: ${endDate1 - startDate1} ms`);
+// const startDate1 = Date.now();
+// solution1([4, 0, 1, -2, 3]);
+// const endDate1 = Date.now();
+// console.log(`Execution time: ${endDate1 - startDate1} ms`);
 
-console.time("Execution Time");
-solution1([4, 0, 1, -2, 3]);
-console.timeEnd("Execution Time");
+// console.time("Execution Time");
+// solution1([4, 0, 1, -2, 3]);
+// console.timeEnd("Execution Time");
 
-const startPerformance1 = performance.now();
-solution1([4, 0, 1, -2, 3]);
-const endPerformance1 = performance.now();
-console.log(`Execution time: ${endPerformance1 - startPerformance1} ms`);
+// const startPerformance1 = performance.now();
+// solution1([4, 0, 1, -2, 3]);
+// const endPerformance1 = performance.now();
+// console.log(`Execution time: ${endPerformance1 - startPerformance1} ms`);
 
 console.log(solution1([4, 0, 1, -2, 3]));
