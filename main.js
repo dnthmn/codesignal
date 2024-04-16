@@ -270,3 +270,65 @@ console.log(
     ]
   )
 );
+
+// Module 4 – Problem Solving
+// Given an array of unique integers numbers, your task is to find the number of pairs of indices (i, j) such
+// that i ≤ j and the sum numbers[i] + numbers[j] is equal to some power of 2. Note: The numbers 2^0 = 1, 2^1 = 2, 2^2 = 4, 2^3 = 8,
+// etc. are considered to be powers of 2.
+
+// Examples
+// For numbers = [1, -1, 2, 3], the output should be solution(numbers) = 5.
+// • There is one pair of indices where the sum of the elements is 2^0 = 1: (1, 2): numbers[1] + numbers[2]= -1 + 2 = 1
+// • There are two pairs of indices where the sum of the elements is 2^1 = 2: (0, 0) and (1, 3)
+// • There are two pairs of indices where the sum of the elements is 2^2 = 4: (0, 3) and (2, 2)
+// • In total, there are 1 + 2 + 2 = 5 pairs summing to powers of 2.
+
+// For numbers = [2], the output should be solution(numbers) = 1.
+// • The only pair of indices is (0, 0) and the sum is equal to 2^2 = 4. So, the answer is 1.
+
+// For numbers = [-2, -1, 0, 1, 2], the output should be solution(numbers) = 5.
+// • There are two pairs of indices where the sum of the elements is 2^0 = 1: (2, 3) and (1, 4)
+// • There are two pairs of indices where the sum of the elements is 2^1 = 2: (2, 4) and (3, 3)
+// • There is one pair of indices where the sum of the elements is 2^2 = 4: (4, 4)
+// • In total, there are 2 + 2 + 1 = 5 pairs summing to powers of 2.
+
+// Guaranteed constraints:
+// • 1 ≤ numbers.length ≤ 10^5
+// • -10^6 ≤ numbers[i] ≤ 10^6
+
+const solution4 = (numbers) => {
+  let result = 0;
+  const powersOfTwo = [];
+
+  for (let p = 1; p <= Math.pow(10, 6); p *= 2) {
+    powersOfTwo.push(p);
+  }
+
+  for (let i = 0; i <= numbers.length - 1; i++) {
+    for (let j = 0; j <= numbers.length - 1; j++) {
+      const sum = numbers[i] + numbers[j];
+      if (powersOfTwo.includes(sum) && i <= j) result += 1;
+    }
+  }
+
+  return result;
+};
+
+// Measure performance
+// const startDate4 = Date.now();
+// solution2("010", "amazing");
+// const endDate4 = Date.now();
+// console.log(`Execution time: ${endDate4 - startDate4} ms`);
+
+// console.time("Execution Time");
+// solution2("010", "amazing");
+// console.timeEnd("Execution Time");
+
+// const startPerformance4 = performance.now();
+// solution2("010", "amazing");
+// const endPerformance4 = performance.now();
+// console.log(`Execution time: ${endPerformance4 - startPerformance4} ms`);
+
+console.log(solution4([1, -1, 2, 3]));
+// console.log(solution4([2]));
+// console.log(solution4([-2, -1, 0, 1, 2]));
