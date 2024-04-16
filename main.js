@@ -251,8 +251,68 @@ console.log(solution2("010", "amazing"));
 const solution3 = (field, figure) => {
   let droppingPosition = -1;
 
+  for (let column = 0; column <= field[0].length - figure[0].length; column++) {
+    if (isFullRow(field, figure, column)) droppingPosition = column;
+  }
+
   return droppingPosition;
 };
+
+const isFullRow = (field, figure, column) => {};
+
+// Measure performance
+// const startDate3 = Date.now();
+// solution3(
+//   [
+//     [0, 0, 0],
+//     [0, 0, 0],
+//     [0, 0, 0],
+//     [1, 0, 0],
+//     [1, 1, 0],
+//   ],
+//   [
+//     [0, 0, 1],
+//     [0, 1, 1],
+//     [0, 0, 1],
+//   ]
+// );
+// const endDate3 = Date.now();
+// console.log(`Execution time: ${endDate3 - startDate3} ms`);
+
+// console.time("Execution Time");
+// solution3(
+//   [
+//     [0, 0, 0],
+//     [0, 0, 0],
+//     [0, 0, 0],
+//     [1, 0, 0],
+//     [1, 1, 0],
+//   ],
+//   [
+//     [0, 0, 1],
+//     [0, 1, 1],
+//     [0, 0, 1],
+//   ]
+// );
+// console.timeEnd("Execution Time");
+
+// const startPerformance3 = performance.now();
+// solution3(
+//   [
+//     [0, 0, 0],
+//     [0, 0, 0],
+//     [0, 0, 0],
+//     [1, 0, 0],
+//     [1, 1, 0],
+//   ],
+//   [
+//     [0, 0, 1],
+//     [0, 1, 1],
+//     [0, 0, 1],
+//   ]
+// );
+// const endPerformance3 = performance.now();
+// console.log(`Execution time: ${endPerformance3 - startPerformance3} ms`);
 
 console.log(
   solution3(
@@ -270,6 +330,23 @@ console.log(
     ]
   )
 );
+
+// console.log(
+//   solution3(
+//     [
+//       [0, 0, 0, 0, 0],
+//       [0, 0, 0, 0, 0],
+//       [0, 0, 0, 0, 0],
+//       [1, 1, 0, 1, 0],
+//       [1, 0, 1, 0, 1],
+//     ],
+//     [
+//       [1, 1, 1],
+//       [1, 0, 1],
+//       [1, 0, 1],
+//     ]
+//   )
+// );
 
 // Module 4 – Problem Solving
 // Given an array of unique integers numbers, your task is to find the number of pairs of indices (i, j) such
@@ -316,16 +393,16 @@ const solution4 = (numbers) => {
 
 // Measure performance
 // const startDate4 = Date.now();
-// solution2("010", "amazing");
+// solution4([1, -1, 2, 3]);
 // const endDate4 = Date.now();
 // console.log(`Execution time: ${endDate4 - startDate4} ms`);
 
 // console.time("Execution Time");
-// solution2("010", "amazing");
+// solution4([1, -1, 2, 3]);
 // console.timeEnd("Execution Time");
 
 // const startPerformance4 = performance.now();
-// solution2("010", "amazing");
+// solution4([1, -1, 2, 3]);
 // const endPerformance4 = performance.now();
 // console.log(`Execution time: ${endPerformance4 - startPerformance4} ms`);
 
